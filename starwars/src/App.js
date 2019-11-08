@@ -12,7 +12,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="Header">React Wars</h1>
+      <h1 className="Header">&#64;</h1>
       <Characters/>
     </div>
   );
