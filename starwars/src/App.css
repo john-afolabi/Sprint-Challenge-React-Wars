@@ -20,7 +20,7 @@
 
 /* write your parent styles in here for your App.js */
 
-.container {
+.characterslist{
   display: flex;
   flex-wrap: wrap;
   align-content: space-between;
