@@ -5,22 +5,19 @@ import {
   CardBody,
   CardHeader,
   CardTitle,
-  Col
 } from "reactstrap";
 
 function CharacterCard(props) {
   return (
-    <Col xs="6">
-      <Card body>
+      <Card body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
         <CardBody>
           <CardHeader tag="h4">{props.name}</CardHeader>
-          <CardTitle>{props.gender}</CardTitle>
+          <CardTitle style={{ textTransform: 'uppercase' }}>{props.gender}</CardTitle>
           <CardText>Birth Year: {props.birth_year}</CardText>
           <CardText>Height: {props.height}cm</CardText>
           <CardText>Weight: {props.mass}kg</CardText>
         </CardBody>
       </Card>
-    </Col>
   );
 }
 

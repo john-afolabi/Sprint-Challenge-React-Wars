@@ -17,5 +17,21 @@
   text-align: center;
   margin: 40px auto;
 }
+
 /* write your parent styles in here for your App.js */
 
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+
+.card {
+  width: calc(50% - 40px);
+  margin: 20px;
+}
+
+.card-header {
+  font-family: 'star_jediregular', Arial, sans-serif;
+  margin: 0 0 10px -20px;
+}
