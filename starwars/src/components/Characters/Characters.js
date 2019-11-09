@@ -5,16 +5,22 @@ import CharacterCard from "./CharacterCard";
 
 function Characters() {
   const [people, setPeople] = useState([]);
-  const [page, setPage] = useState(1);
+  const [next, setNext] = useState(null);
+  const [prev, setPrev] = useState(null);
+  const [currURL, setCurrURL] = useState("https://swapi.co/api/people/?format=json")
 
   useEffect(() => {
     axios
-      .get(`https://swapi.co/api/people/?format=json&page=${page}`)
+      .get(currURL)
       .then(response => {
+        setNext(response.data.next)
+        setPrev(response.data.previous)
         setPeople(response.data.results);
+        console.log(response.data.next);
+        
       })
       .catch(error => {});
-  }, [page]);
+  }, [currURL]);
 
   return (
     <Container>
@@ -34,12 +40,12 @@ function Characters() {
       </div>
       <Row>
         <Col xs="6">
-          <Button color="primary" onClick={() => setPage(page - 1)}>
+          <Button color="primary" onClick={() => setCurrURL(prev)}>
             Previous Page
           </Button>
         </Col>
         <Col xs="6">
-          <Button color="primary" onClick={() => setPage(page + 1)}>
+          <Button color="primary" onClick={() => setCurrURL(next)}>
             Next Page
           </Button>
           </Col>
