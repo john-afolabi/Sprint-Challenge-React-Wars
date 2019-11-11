@@ -1,8 +1,37 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'star_jediregular';
+  src: url('./fonts/starjedi-webfont.woff2') format('woff2'),
+       url('./fonts/starjedi-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
 }
+
+/* .App {
+  text-align: center;
+} */
 .Header {
   color: #443e3e;
   text-shadow: 1px 1px 5px #fff;
+  font-family: 'star_jediregular', Arial, sans-serif;
+  text-align: center;
+  margin: 40px auto;
 }
+
 /* write your parent styles in here for your App.js */
+
+.characterslist{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+
+.card {
+  width: calc(50% - 40px);
+  margin: 20px;
+}
+
+.card-header {
+  font-family: 'star_jediregular', Arial, sans-serif;
+  margin: 0 0 10px -20px;
+}
